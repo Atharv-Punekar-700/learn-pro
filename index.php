@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<?php require_once('../config.php'); ?>
+ <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
-<?php require_once('config.php'); ?>
- <?php require_once('inc/header.php') ?>
-  <body class="hold-transition layout-top-nav" >
+<?php require_once('inc/header.php') ?>
+  <body class="layout-fixed layout-footer-fixed text-sm sidebar-mini control-sidebar-slide-open layout-navbar-fixed " data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="" style="height: auto;">
     <div class="wrapper">
      <?php require_once('inc/topBarNav.php') ?>
+     <?php require_once('inc/navigation.php') ?>
               
-     <?php $page = isset($_GET['page']) ? $_GET['page'] : 'portal';  ?>
+     <?php $page = isset($_GET['page']) ? $_GET['page'] : 'home';  ?>
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper" style="min-height: 567.854px;">
         <!-- Content Header (Page header) -->
         <div class="content-header">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
                 <h1 class="m-0"><?php echo ucwords(str_replace("_", " ",$page)) ?></h1>
@@ -32,7 +33,7 @@
         <!-- /.content-header -->
         <!-- Main content -->
         <section class="content">
-          <div class="container">
+          <div class="container-fluid">
             <?php 
               if(!file_exists($page.".php") && !is_dir($page)){
                   include '404.html';
